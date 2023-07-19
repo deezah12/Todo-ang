@@ -22,11 +22,17 @@ constructor (){}
       taskName: form.controls['task'].value,
       isCompleted: false
     })
+
+    form.reset();
   }
 
   onDelete(index: number){
     console.log(index);
 
     this.taskArray.splice(index, 1);
+  }
+  onCheck(index: number){
+    console.log(this.taskArray);
+    this.taskArray[index].isCompleted = !this.taskArray[index].isCompleted;
   }
 }
